@@ -19,9 +19,12 @@ The Oracle Database project tasks you with designing an Entity-Relationship (ER)
 
 The repository is organized as follows:
 
-- `ER_Diagram.pdf` — ER diagram for the plaform database.
-- `createTables.sql` — SQL script to create all tables, constraints, sequences, and triggers as required by the specification.
-- `dropTables.sql` — SQL script to drop all database objects created by `createTables.sql`.
+- [`ER_Diagram.pdf`](ER_diagram.pdf) — ER diagram for the plaform database.
+- [`createTables.sql`](createTables.sql) — SQL script to create all tables, constraints, sequences, and triggers as required by the specification. Schema definition with:<br>- Core tables (Users, Friends, Cities)<br>- Education/Event structures<br>- Album/Photo circular dependency handling via `DEFERRABLE` constraints<br>- Triggers for ID sequencing and friend pair ordering
+- [`dropTables.sql`](dropTables.sql) — SQL script to drop all database objects created by `createTables.sql`.
+- [`loadData.sql`](loadData.sql) — SQL script handling data insertion from Public_User_Information, including:<br>- User/City relationships<br>- Education records<br>- Friend connections<br>- Event/Photo metadata<br>- Circular dependency resolution using transactions |
+- [`createViews.sql`](createViews.sql) — SQL script defining database views for:<br>- User information aggregation<br>- Friend relationships<br>- Photo and album details<br>- Event metadata<br>- Tag data<br>Facilitates simplified querying and reporting across normalized tables.
+- [`dropViews.sql`](dropViews.sql) — SQL script to drop all database objects created by `createTables.sql`.
 - `README.md` — Project documentation (this file).
 
 Additional files (e.g., test scripts or documentation) may be included as needed.
